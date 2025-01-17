@@ -35,13 +35,13 @@ body {
 /* Default background color */
 .normal-background {
   background-color: #cdd745; /* Your normal color */
-  transition: background-color 0.3s ease; /* Transition effect */
+  transition: background-color 0.5s ease; /* Transition effect */
 }
 
 /* New background color when the video is playing */
 .new-background {
   background-color: #31602b; /* Your desired color when playing */
-  transition: background-color 0.3s ease; /* Transition effect */
+  transition: background-color 0.5s ease; /* Transition effect */
 }
 
 img {
