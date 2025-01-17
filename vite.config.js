@@ -13,11 +13,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve('./dist'), // Output directory for the build
   },
-  esbuild: {
-    loader: {
-      '.js': 'jsx', // Tells Vite to treat .js files as JSX
-    },
-  },
+ 
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'), // Allows imports like '@/some/path'
