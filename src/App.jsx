@@ -2,7 +2,6 @@ import React from 'react';
 import VideoControl from './components/playbackcontrol'; // Import VideoControl component
 import './App.css';
 
-
 function App() {
   
   
@@ -23,7 +22,7 @@ function App() {
 
       {/* First video control */}
       <VideoControl
-        videoUrl="./components/typefaster.mp4" // Music Video File
+        videoUrl="./typefaster.mp4" // Music Video File
         buttonColor="#31602b" // Button color
         buttonHoverColor="#3d8234" // Hover color for button
         backgroundColor="#cdd745" // Background color when not playing
@@ -34,7 +33,7 @@ function App() {
 
       {/* Second video control */}
       <VideoControl
-        videoUrl="./components/dolphon.mp4"  // Music Video File
+        videoUrl="./dolphon.mp4"  // Music Video File
         buttonColor="#fdeb8e" // Button color (e.g., tomato color)
         buttonHoverColor="#fdea00" // Hover color (e.g., darker tomato)
         backgroundColor="#cdd745" // Default background color
