@@ -13,6 +13,7 @@ body {
   
   overflow-x: hidden; /* Allow vertical scrolling if content grows */
   overflow-y: hidden;
+  transition: background-color 0.5s ease !important;
 }
 
 /* src/App.css */

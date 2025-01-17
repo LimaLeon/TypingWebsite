@@ -23,6 +23,7 @@ const VideoControl = ({
       currentlyVisibleVideo.pause(); // Stop playback of the previous video
       currentlyVisibleVideo.style.opacity = 0; // Hide the previous video
       document.body.style.backgroundColor = backgroundColor; // Reset background color
+      
     }
   
     // Handle the current video toggle
