@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 
-let currentlyPlayingVideo = null; // Global variable to check if Video's playing
-let currentlyVisibleVideo = null; // Global variable to check if Video's visible
+let currentlyPlayingVideo = null; //Global variable to check if Video's playing
+let currentlyVisibleVideo = null; //Global variable to check if Video's visible
+
 
 const VideoControl = ({
   videoUrl,
@@ -21,14 +22,17 @@ const VideoControl = ({
     if (currentlyVisibleVideo && currentlyVisibleVideo !== videoRef.current) {
       currentlyVisibleVideo.pause(); // Stop playback of the previous video
       currentlyVisibleVideo.style.opacity = 0; // Hide the previous video
+      document.body.style.transition = 'background-color 0.5s ease'; // Smooth transition for background color
       document.body.style.backgroundColor = backgroundColor; // Reset background color
+      
     }
-
+  
     // Handle the current video toggle
     if (currentlyVisibleVideo === videoRef.current) {
       // If the current video is already visible, hide it
       videoRef.current.pause();
       videoRef.current.style.opacity = 0;
+      document.body.style.transition = 'background-color 0.5s ease'; // Smooth transition for background color
       document.body.style.backgroundColor = backgroundColor; // Reset background color
       currentlyVisibleVideo = null; // Clear the global reference
     } else {
@@ -36,11 +40,17 @@ const VideoControl = ({
       if (videoRef.current) {
         videoRef.current.play();
         videoRef.current.style.opacity = 1; // Ensure visibility
+        document.body.style.transition = 'background-color 0.5s ease'; // Smooth transition for background color
         document.body.style.backgroundColor = backgroundColorOnPlay; // Set new background color
         currentlyVisibleVideo = videoRef.current; // Update the global reference
       }
     }
   };
+  
+  
+  
+
+
 
   // Pause or play video based on visibility state and change background color
   if (videoRef.current && !isVisible) {
@@ -70,6 +80,7 @@ const VideoControl = ({
         style={{
           opacity: isVisible ? 1 : 0, // Toggle opacity based on visibility
           transition: 'opacity 0.5s ease', // Smooth transition for opacity change
+          
           width: '250px', // You can adjust the video size here
           height: 'auto',
           position: 'relative', // Keep video positioned within anchor container
@@ -84,7 +95,7 @@ const VideoControl = ({
         style={{
           position: 'absolute',
           transform: 'translate(-50%, -50%)',
-          top: '100px', // Adjust button's top position
+          top: '100px', // Adjust button's top position,
           left: '0px',
           padding: '13px 20px', // Button padding
           fontSize: '16px', // Font size for the button
@@ -105,4 +116,4 @@ const VideoControl = ({
   );
 };
 
-export default VideoControl;
+export default VideoControl;  
